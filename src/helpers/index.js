@@ -6,9 +6,13 @@ export default class helpers {
     return new Date().getTime().toString() + "_" + n;
   }
 
-  formatTime(date) {
+  formatTimeUTC(date) {
     let formattedDate = moment.utc(date).format("YYYYMMDDTHHmmssZ");
     return formattedDate.replace("+00:00", "Z");
+  }
+
+  formatTime(date) {
+    return moment(date).format("YYYYMMDDTHHmmss");
   }
 
   calculateDuration(startTime, endTime) {
