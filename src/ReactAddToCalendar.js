@@ -99,10 +99,13 @@ export default class ReactAddToCalendar extends React.Component {
         icon = <i className={"fa fa-" + currentIcon} />;
       }
 
+      const currentItemClass = `${currentItem}-link ${dropdownLinkClass}`;
+
       return (
-        <li key={helpers.getRandomKey()}>
+        <li key={helpers.getRandomKey()}
+            className={dropdownListItemClass}>
           <a
-            className={currentItem + "-link"}
+            className={currentItemClass}
             onClick={self.handleDropdownLinkClick}
             href={helpers.buildUrl(
               self.props.event,
@@ -120,7 +123,7 @@ export default class ReactAddToCalendar extends React.Component {
 
     return (
       <div className={this.props.dropdownClass}>
-        <ul>{items}</ul>
+        <ul className={this.props.dropdownUlClass}>{items}</ul>
       </div>
     );
   }
@@ -206,6 +209,9 @@ ReactAddToCalendar.propTypes = {
   displayItemIcons: PropTypes.bool,
   optionsOpen: PropTypes.bool,
   dropdownClass: PropTypes.string,
+  dropdownListClass: PropTypes.string,
+  dropdownListItemClass: PropTypes.string,
+  dropdownLinkClass: PropTypes.string,
   event: PropTypes.shape({
     title: PropTypes.string,
     description: PropTypes.string,
@@ -228,6 +234,9 @@ ReactAddToCalendar.defaultProps = {
   displayItemIcons: true,
   optionsOpen: false,
   dropdownClass: "react-add-to-calendar__dropdown",
+  dropdownListClass: "react-add-to-calendar__ul",
+  dropdownListItemClass: "react-add-to-calendar__li",
+  dropdownLinkClass: "react-add-to-calendar__a",
   event: {
     title: "Sample Event",
     description: "This is the sample event provided as an example only",

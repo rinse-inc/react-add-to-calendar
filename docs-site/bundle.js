@@ -19051,13 +19051,16 @@
 	          icon = _react2.default.createElement("i", { className: "fa fa-" + currentIcon });
 	        }
 
+	        var currentItemClass = currentItem + "-link " + dropdownLinkClass;
+
 	        return _react2.default.createElement(
 	          "li",
-	          { key: helpers.getRandomKey() },
+	          { key: helpers.getRandomKey(),
+	            className: dropdownListItemClass },
 	          _react2.default.createElement(
 	            "a",
 	            {
-	              className: currentItem + "-link",
+	              className: currentItemClass,
 	              onClick: self.handleDropdownLinkClick,
 	              href: helpers.buildUrl(self.props.event, currentItem, self.state.isCrappyIE),
 	              target: "_blank"
@@ -19073,7 +19076,7 @@
 	        { className: this.props.dropdownClass },
 	        _react2.default.createElement(
 	          "ul",
-	          null,
+	          { className: this.props.dropdownUlClass },
 	          items
 	        )
 	      );
@@ -19161,6 +19164,9 @@
 	  displayItemIcons: _propTypes2.default.bool,
 	  optionsOpen: _propTypes2.default.bool,
 	  dropdownClass: _propTypes2.default.string,
+	  dropdownListClass: _propTypes2.default.string,
+	  dropdownListItemClass: _propTypes2.default.string,
+	  dropdownLinkClass: _propTypes2.default.string,
 	  event: _propTypes2.default.shape({
 	    title: _propTypes2.default.string,
 	    description: _propTypes2.default.string,
@@ -19183,6 +19189,9 @@
 	  displayItemIcons: true,
 	  optionsOpen: false,
 	  dropdownClass: "react-add-to-calendar__dropdown",
+	  dropdownListClass: "react-add-to-calendar__ul",
+	  dropdownListItemClass: "react-add-to-calendar__li",
+	  dropdownLinkClass: "react-add-to-calendar__a",
 	  event: {
 	    title: "Sample Event",
 	    description: "This is the sample event provided as an example only",
