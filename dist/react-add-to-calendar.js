@@ -181,7 +181,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	          icon = _react2.default.createElement("i", { className: "fa fa-" + currentIcon });
 	        }
 
-	        var currentItemClass = currentItem + "-link " + _this2.props.dropdownLinkClass;
+	        var currentItemClass = _this2.props.dropdownLinkClass + " " + _this2.props.dropdownLinkClass + "--" + currentItem;
 
 	        return _react2.default.createElement(
 	          "li",
