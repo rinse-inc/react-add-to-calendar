@@ -19039,6 +19039,8 @@
 	  }, {
 	    key: "renderDropdown",
 	    value: function renderDropdown() {
+	      var _this2 = this;
+
 	      var self = this;
 
 	      var items = this.props.listItems.map(function (listItem) {
@@ -19051,12 +19053,12 @@
 	          icon = _react2.default.createElement("i", { className: "fa fa-" + currentIcon });
 	        }
 
-	        var currentItemClass = currentItem + "-link " + dropdownLinkClass;
+	        var currentItemClass = currentItem + "-link " + _this2.props.dropdownLinkClass;
 
 	        return _react2.default.createElement(
 	          "li",
 	          { key: helpers.getRandomKey(),
-	            className: dropdownListItemClass },
+	            className: _this2.props.dropdownListItemClass },
 	          _react2.default.createElement(
 	            "a",
 	            {

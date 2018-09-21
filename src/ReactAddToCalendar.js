@@ -99,11 +99,11 @@ export default class ReactAddToCalendar extends React.Component {
         icon = <i className={"fa fa-" + currentIcon} />;
       }
 
-      const currentItemClass = `${currentItem}-link ${dropdownLinkClass}`;
+      const currentItemClass = `${currentItem}-link ${this.props.dropdownLinkClass}`;
 
       return (
         <li key={helpers.getRandomKey()}
-            className={dropdownListItemClass}>
+            className={this.props.dropdownListItemClass}>
           <a
             className={currentItemClass}
             onClick={self.handleDropdownLinkClick}
