@@ -54,7 +54,7 @@ export default class ReactAddToCalendar extends React.Component {
     e.preventDefault();
     let url = e.currentTarget.getAttribute("href");
 
-    if (clickTrackingEvent) clickTrackingEvent(e);
+    if (this.props.clickTrackingEvent) this.props.clickTrackingEvent(e);
 
     if (
       !helpers.isMobile() &&

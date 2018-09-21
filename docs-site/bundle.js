@@ -19011,7 +19011,7 @@
 	      e.preventDefault();
 	      var url = e.currentTarget.getAttribute("href");
 
-	      if (clickTrackingEvent) clickTrackingEvent(e);
+	      if (this.props.clickTrackingEvent) this.props.clickTrackingEvent(e);
 
 	      if (!helpers.isMobile() && (url.startsWith("data") || url.startsWith("BEGIN"))) {
 	        var filename = "download.ics";
