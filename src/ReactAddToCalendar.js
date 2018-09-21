@@ -54,6 +54,8 @@ export default class ReactAddToCalendar extends React.Component {
     e.preventDefault();
     let url = e.currentTarget.getAttribute("href");
 
+    if (clickTrackingEvent) clickTrackingEvent(e);
+
     if (
       !helpers.isMobile() &&
       (url.startsWith("data") || url.startsWith("BEGIN"))
@@ -220,6 +222,7 @@ ReactAddToCalendar.propTypes = {
     startTime: PropTypes.string,
     endTime: PropTypes.string
   }).isRequired,
+  clickTrackingEvent: PropTypes.func,
   listItems: PropTypes.arrayOf(PropTypes.object),
   rootClass: PropTypes.string
 };

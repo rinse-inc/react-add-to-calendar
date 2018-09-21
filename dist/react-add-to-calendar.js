@@ -139,6 +139,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	      e.preventDefault();
 	      var url = e.currentTarget.getAttribute("href");
 
+	      if (clickTrackingEvent) clickTrackingEvent(e);
+
 	      if (!helpers.isMobile() && (url.startsWith("data") || url.startsWith("BEGIN"))) {
 	        var filename = "download.ics";
 	        var blob = new Blob([url], { type: "text/calendar;charset=utf-8" });
@@ -305,6 +307,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    startTime: _propTypes2.default.string,
 	    endTime: _propTypes2.default.string
 	  }).isRequired,
+	  clickTrackingEvent: _propTypes2.default.func,
 	  listItems: _propTypes2.default.arrayOf(_propTypes2.default.object),
 	  rootClass: _propTypes2.default.string
 	};
