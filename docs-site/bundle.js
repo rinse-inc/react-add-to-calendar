@@ -19065,6 +19065,7 @@
 	              className: currentItemClass,
 	              onClick: self.handleDropdownLinkClick,
 	              href: helpers.buildUrl(self.props.event, currentItem, self.state.isCrappyIE),
+	              "data-calendar-service": currentItem,
 	              target: "_blank"
 	            },
 	            icon,

@@ -112,6 +112,7 @@ export default class ReactAddToCalendar extends React.Component {
               currentItem,
               self.state.isCrappyIE
             )}
+            data-calendar-service={currentItem}
             target="_blank"
           >
             {icon}
